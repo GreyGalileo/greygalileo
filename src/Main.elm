@@ -133,7 +133,7 @@ view model =
 
     div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
         h3 [] [text "Laboratoire Jean Kuntzmann (2023)"],
-        p [] [a [href ""] [tr_lang internship_report]],
+        p [] [a [href "internship_report"] [tr_lang internship_report]],
         p [] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
       ]
     ]
