@@ -5202,9 +5202,6 @@ var $author$project$Main$LanguageChange = function (a) {
 };
 var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$button = _VirtualDom_node('button');
-var $elm$html$Html$div = _VirtualDom_node('div');
-var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5213,11 +5210,35 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			$elm$json$Json$Encode$string(string));
 	});
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $rundis$elm_bootstrap$Bootstrap$Utilities$Flex$col = $elm$html$Html$Attributes$class('flex-column');
+var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Main$internship_report = {
+	chinese: $elm$html$Html$text('___cn___'),
+	english: $elm$html$Html$text('Laboratoire Jean Kutzmann internship reeport'),
+	french: $elm$html$Html$text('Rapport de stage Laboratoire Jean Kuntzmann')
+};
+var $rundis$elm_bootstrap$Bootstrap$Utilities$Flex$justifyCenter = $elm$html$Html$Attributes$class('justify-content-center');
+var $author$project$Main$lagrange = {
+	chinese: $elm$html$Html$text('拉格朗日内插'),
+	english: $elm$html$Html$text('Interactive Lagrange interpolation'),
+	french: $elm$html$Html$text('Interpolation de Lagrange interactive')
+};
+var $author$project$Main$link_cv = {
+	chinese: $elm$html$Html$Attributes$href('../english_cv.pdf'),
+	english: $elm$html$Html$Attributes$href('../english_cv.pdf'),
+	french: $elm$html$Html$Attributes$href('../french_cv.pdf')
 };
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
 	return {$: 'Normal', a: a};
@@ -5236,15 +5257,21 @@ var $elm$html$Html$Events$onClick = function (msg) {
 		'click',
 		$elm$json$Json$Decode$succeed(msg));
 };
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$html$Html$pre = _VirtualDom_node('pre');
+var $rundis$elm_bootstrap$Bootstrap$Utilities$Flex$row = $elm$html$Html$Attributes$class('flex-row');
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$subtitle = {
 	chinese: $elm$html$Html$text('学习数学的大二学生'),
 	english: $elm$html$Html$text('2nd Year Bachelor\'s Student in Mathematics'),
 	french: $elm$html$Html$text('Étudiant en 2eme année de Licence de Mathematiques')
+};
+var $author$project$Main$text_cv = {
+	chinese: $elm$html$Html$text('CV (英文)'),
+	english: $elm$html$Html$text('CV (english)'),
+	french: $elm$html$Html$text('CV (français)')
 };
 var $author$project$Main$title = {
 	chinese: $elm$html$Html$text('加利略的个人网站'),
@@ -5262,8 +5289,20 @@ var $author$project$Main$translate = F2(
 				return text.chinese;
 		}
 	});
+var $author$project$Main$translate_attribute = F2(
+	function (lang, text) {
+		switch (lang.$) {
+			case 'English':
+				return text.english;
+			case 'French':
+				return text.french;
+			default:
+				return text.chinese;
+		}
+	});
 var $author$project$Main$view = function (model) {
 	var tr_lang = $author$project$Main$translate(model.language);
+	var tr_attr = $author$project$Main$translate_attribute(model.language);
 	return A2(
 		$elm$html$Html$div,
 		_List_fromArray(
@@ -5278,7 +5317,8 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$h1,
 				_List_fromArray(
 					[
-						A2($elm$html$Html$Attributes$style, 'color', '#2161AB')
+						A2($elm$html$Html$Attributes$style, 'color', '#2161AB'),
+						A2($elm$html$Html$Attributes$style, 'margin', '0px')
 					]),
 				_List_fromArray(
 					[
@@ -5295,7 +5335,7 @@ var $author$project$Main$view = function (model) {
 						tr_lang($author$project$Main$subtitle)
 					])),
 				A2(
-				$elm$html$Html$span,
+				$elm$html$Html$pre,
 				_List_fromArray(
 					[
 						A2($elm$html$Html$Attributes$style, 'white-space', 'pre-line')
@@ -5303,40 +5343,129 @@ var $author$project$Main$view = function (model) {
 				_List_fromArray(
 					[
 						A2(
-						$elm$html$Html$a,
-						_List_Nil,
+						$elm$html$Html$p,
 						_List_fromArray(
 							[
-								$elm$html$Html$text('CV')
-							])),
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('mailto: galileo.grey@etu.univ-grenoble-alpes.fr')
+								A2($elm$html$Html$Attributes$style, 'margin', '1px')
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text('Email')
+								A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										tr_attr($author$project$Main$link_cv)
+									]),
+								_List_fromArray(
+									[
+										tr_lang($author$project$Main$text_cv)
+									]))
 							])),
 						A2(
-						$elm$html$Html$a,
+						$elm$html$Html$p,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$href('https://github.com/GreyGalileo')
+								A2($elm$html$Html$Attributes$style, 'margin', '1px')
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text('Github')
+								A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$href('mailto: galileo.grey@etu.univ-grenoble-alpes.fr')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Email')
+									]))
+							])),
+						A2(
+						$elm$html$Html$p,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'margin', '1px')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$href('https://github.com/GreyGalileo')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Github')
+									]))
 							]))
 					])),
 				A2(
-				$elm$html$Html$span,
+				$elm$html$Html$div,
 				_List_fromArray(
 					[
-						A2($elm$html$Html$Attributes$style, '', '')
+						A2($elm$html$Html$Attributes$style, 'width', '100%')
 					]),
-				_List_Nil),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$span,
+						_List_fromArray(
+							[$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$col]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$row,
+										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$justifyCenter,
+										A2($elm$html$Html$Attributes$style, 'margin', '10px')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$h3,
+										_List_Nil,
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Laboratoire Jean Kuntzmann (2023)')
+											])),
+										A2(
+										$elm$html$Html$p,
+										_List_Nil,
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$a,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$href('')
+													]),
+												_List_fromArray(
+													[
+														tr_lang($author$project$Main$internship_report)
+													]))
+											])),
+										A2(
+										$elm$html$Html$p,
+										_List_Nil,
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$a,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$href('https://greygalileo.github.io/elm-interpolation/')
+													]),
+												_List_fromArray(
+													[
+														tr_lang($author$project$Main$lagrange)
+													]))
+											]))
+									]))
+							]))
+					])),
 				A2(
 				$elm$html$Html$span,
 				_List_Nil,

@@ -79,11 +79,16 @@ text_cv = {
     }
 
 lagrange = {
-    english = text "Lagrange interpolation",
-    french = text "Interpolation de Lagrange",
+    english = text "Interactive Lagrange interpolation",
+    french = text "Interpolation de Lagrange interactive",
     chinese = text "拉格朗日内插"
     }
 
+internship_report = {
+  english = text "Laboratoire Jean Kutzmann internship reeport",
+  french = text "Rapport de stage Laboratoire Jean Kuntzmann",
+  chinese = text "___cn___"
+  }
 
 translate_attribute: Language -> LangAttr msg -> Attribute msg
 translate_attribute lang text =
@@ -119,33 +124,19 @@ view model =
     ],
 
 
-  div [style "width" "100%", Flex.justifyCenter, Flex.row][
-
-    span [style "font-size" "12em"] [text "("],
+  div [style "width" "100%"][
   
 
     span [Flex.col] [
-    div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
-        span [style "margin" "10px"] [a [href ""] [text "something here"]],
-        span [style "font-size" "4em", style "margin" "10px"] [text "0"],
-        span [style "font-size" "4em", style "margin" "10px"] [text "0"]
-    ],
+
 
 
     div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
-        span [style "font-size" "4em", style "margin" "10px"] [text "0"],
-        span [Flex.inline] [a [href ""] [text "Internship report LJK"]],
-        span [style "font-size" "4em", style "margin" "10px"] [text "1"]
-    ],
-
-    div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
-        span [style "font-size" "4em", style "margin" "10px"] [text "0"],
-        span [style "font-size" "4em", style "margin" "10px"] [text "0"],
-        span [style "width" "1%"] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
+        h3 [] [text "Laboratoire Jean Kuntzmann (2023)"],
+        p [] [a [href ""] [tr_lang internship_report]],
+        p [] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
       ]
-    ],
-
-    span [style "font-size" "12em"] [text ")"]
+    ]
 
 
       ],
