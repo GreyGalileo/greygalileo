@@ -85,7 +85,7 @@ lagrange = {
     }
 
 internship_report = {
-  english = text "Laboratoire Jean Kutzmann internship reeport",
+  english = text "Laboratoire Jean Kutzmann internship report",
   french = text "Rapport de stage Laboratoire Jean Kuntzmann",
   chinese = text "___cn___"
   }
@@ -133,7 +133,7 @@ view model =
 
     div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
         h3 [] [text "Laboratoire Jean Kuntzmann (2023)"],
-        p [] [a [href "internship_report"] [tr_lang internship_report]],
+        p [] [a [href "../internship_report.pdf"] [tr_lang internship_report]],
         p [] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
       ]
     ]
