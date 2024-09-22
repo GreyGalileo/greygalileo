@@ -59,17 +59,17 @@ translate lang text =
 
 title: LangText msg
 title = {
-    english = text "Galileo Grey's Personal Website",
-    french = text "Page Personnelle de Galileo Grey",
+    english = text "Galileo Grey",
+    french = text "Galileo Grey",
     chinese = text "加利略的个人网站"
     }
 
 subtitle: LangText msg
 subtitle = {
-    english = text "2nd Year Bachelor's Student in Mathematics",
-    french = text "Étudiant en 2eme année de Licence de Mathematiques",
+    english = text "3rd Year Bachelor's Student in Mathematics",
+    french = text "Étudiant en 3eme année de Licence de Mathematiques",
     chinese = text "学习数学的大二学生"
-    }
+    }                             
 
 text_cv : LangText msg
 text_cv = {
@@ -84,11 +84,18 @@ lagrange = {
     chinese = text "拉格朗日内插"
     }
 
-internship_report = {
+internship_report1 = {
   english = text "Laboratoire Jean Kutzmann internship report",
   french = text "Rapport de stage Laboratoire Jean Kuntzmann",
   chinese = text "___cn___"
   }
+
+internship_report2 = {
+  english = text "Institut Fourier internship report",
+  french = text "Rapport de stage Institut Fourier",
+  chinese = text "___cn___"
+  }
+
 
 translate_attribute: Language -> LangAttr msg -> Attribute msg
 translate_attribute lang text =
@@ -112,7 +119,7 @@ view model =
   let tr_lang = translate model.language in 
   let tr_attr = translate_attribute model.language  in
 
-  div [style "background-color" "#CDD6E4", style "width" "100%", style "height" "100%"] [
+  div [style "width" "100%", style "height" "100%"] [
 
     Html.h1 [style "color" "#2161AB", style "margin" "0px"][tr_lang title],
     Html.h2 [style "color" "#2161AB"][tr_lang subtitle],
@@ -122,18 +129,20 @@ view model =
      p [style "margin" "1px"] [a [href "mailto: galileo.grey@etu.univ-grenoble-alpes.fr"] [text "Email"]],
      p [style "margin" "1px"] [a [href "https://github.com/GreyGalileo"] [text "Github"]]
     ],
+  div [style "width" "40%"][
 
-
-  div [style "width" "100%"][
+        span [Flex.col] [
+    div [Flex.row, Flex.justifyCenter, style "margin" "10px", style "border" "2px solid black", style "background-color" "#D3D3D3"] [
+        h3 [] [text "Institut Fourier (2024)"],
+        p [] [a [href "../if_report.pdf"] [tr_lang internship_report2]]
+      ]
+    ],                                
   
 
     span [Flex.col] [
-
-
-
-    div [Flex.row, Flex.justifyCenter, style "margin" "10px" ] [
+    div [Flex.row, Flex.justifyCenter, style "margin" "10px",  style "border" "2px solid black", style "background-color" "#D3D3D3"] [
         h3 [] [text "Laboratoire Jean Kuntzmann (2023)"],
-        p [] [a [href "../internship_report.pdf"] [tr_lang internship_report]],
+        p [] [a [href "../internship_report.pdf"] [tr_lang internship_report1]],
         p [] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
       ]
     ]
