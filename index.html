@@ -5224,10 +5224,15 @@ var $elm$html$Html$Attributes$href = function (url) {
 };
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $author$project$Main$internship_report = {
+var $author$project$Main$internship_report1 = {
 	chinese: $elm$html$Html$text('___cn___'),
-	english: $elm$html$Html$text('Laboratoire Jean Kutzmann internship reeport'),
+	english: $elm$html$Html$text('Laboratoire Jean Kutzmann internship report'),
 	french: $elm$html$Html$text('Rapport de stage Laboratoire Jean Kuntzmann')
+};
+var $author$project$Main$internship_report2 = {
+	chinese: $elm$html$Html$text('___cn___'),
+	english: $elm$html$Html$text('Institut Fourier internship report'),
+	french: $elm$html$Html$text('Rapport de stage Institut Fourier')
 };
 var $rundis$elm_bootstrap$Bootstrap$Utilities$Flex$justifyCenter = $elm$html$Html$Attributes$class('justify-content-center');
 var $author$project$Main$lagrange = {
@@ -5265,8 +5270,8 @@ var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $author$project$Main$subtitle = {
 	chinese: $elm$html$Html$text('学习数学的大二学生'),
-	english: $elm$html$Html$text('2nd Year Bachelor\'s Student in Mathematics'),
-	french: $elm$html$Html$text('Étudiant en 2eme année de Licence de Mathematiques')
+	english: $elm$html$Html$text('3rd Year Bachelor\'s Student in Mathematics'),
+	french: $elm$html$Html$text('Étudiant en 3eme année de Licence de Mathematiques')
 };
 var $author$project$Main$text_cv = {
 	chinese: $elm$html$Html$text('CV (英文)'),
@@ -5275,8 +5280,8 @@ var $author$project$Main$text_cv = {
 };
 var $author$project$Main$title = {
 	chinese: $elm$html$Html$text('加利略的个人网站'),
-	english: $elm$html$Html$text('Galileo Grey\'s Personal Website'),
-	french: $elm$html$Html$text('Page Personnelle de Galileo Grey')
+	english: $elm$html$Html$text('Galileo Grey'),
+	french: $elm$html$Html$text('Galileo Grey')
 };
 var $author$project$Main$translate = F2(
 	function (lang, text) {
@@ -5307,7 +5312,6 @@ var $author$project$Main$view = function (model) {
 		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				A2($elm$html$Html$Attributes$style, 'background-color', '#CDD6E4'),
 				A2($elm$html$Html$Attributes$style, 'width', '100%'),
 				A2($elm$html$Html$Attributes$style, 'height', '100%')
 			]),
@@ -5404,7 +5408,7 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
-						A2($elm$html$Html$Attributes$style, 'width', '100%')
+						A2($elm$html$Html$Attributes$style, 'width', '40%')
 					]),
 				_List_fromArray(
 					[
@@ -5420,7 +5424,52 @@ var $author$project$Main$view = function (model) {
 									[
 										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$row,
 										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$justifyCenter,
-										A2($elm$html$Html$Attributes$style, 'margin', '10px')
+										A2($elm$html$Html$Attributes$style, 'margin', '10px'),
+										A2($elm$html$Html$Attributes$style, 'border', '2px solid black'),
+										A2($elm$html$Html$Attributes$style, 'background-color', '#D3D3D3')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$h3,
+										_List_Nil,
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Institut Fourier (2024)')
+											])),
+										A2(
+										$elm$html$Html$p,
+										_List_Nil,
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$a,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$href('../if_report.pdf')
+													]),
+												_List_fromArray(
+													[
+														tr_lang($author$project$Main$internship_report2)
+													]))
+											]))
+									]))
+							])),
+						A2(
+						$elm$html$Html$span,
+						_List_fromArray(
+							[$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$col]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$row,
+										$rundis$elm_bootstrap$Bootstrap$Utilities$Flex$justifyCenter,
+										A2($elm$html$Html$Attributes$style, 'margin', '10px'),
+										A2($elm$html$Html$Attributes$style, 'border', '2px solid black'),
+										A2($elm$html$Html$Attributes$style, 'background-color', '#D3D3D3')
 									]),
 								_List_fromArray(
 									[
@@ -5440,11 +5489,11 @@ var $author$project$Main$view = function (model) {
 												$elm$html$Html$a,
 												_List_fromArray(
 													[
-														$elm$html$Html$Attributes$href('')
+														$elm$html$Html$Attributes$href('../internship_report.pdf')
 													]),
 												_List_fromArray(
 													[
-														tr_lang($author$project$Main$internship_report)
+														tr_lang($author$project$Main$internship_report1)
 													]))
 											])),
 										A2(
