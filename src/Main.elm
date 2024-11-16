@@ -108,9 +108,9 @@ translate_attribute lang text =
 
 link_cv : LangAttr msg
 link_cv = {
-    english = href "greygalileo/english_cv.pdf",
-    french = href "greygalileo/french_cv.pdf",
-    chinese = href "greygalileo/english_cv.pdf"
+    english = href "https://greygalileo.github.io/greygalileo/english_cv.pdf",
+    french = href "https://greygalileo.github.io/greygalileo/french_cv.pdf",
+    chinese = href "https://greygalileo.github.io/greygalileo/english_cv.pdf"
     }
 
 
@@ -135,7 +135,7 @@ view model =
         span [Flex.col] [
     div [Flex.row, Flex.justifyCenter, style "margin" "10px", style "border" "2px solid black", style "background-color" "#D3D3D3"] [
         h3 [] [text "Institut Fourier (2024)"],
-        p [] [a [href "greygalileo/if_report.pdf"] [tr_lang internship_report2]]
+        p [] [a [href "https://greygalileo.github.io/greygalileo/if_report.pdf"] [tr_lang internship_report2]]
       ]
     ],                                
   
@@ -143,7 +143,7 @@ view model =
     span [Flex.col] [
     div [Flex.row, Flex.justifyCenter, style "margin" "10px",  style "border" "2px solid black", style "background-color" "#D3D3D3"] [
         h3 [] [text "Laboratoire Jean Kuntzmann (2023)"],
-        p [] [a [href "greygalileo/ljk_report.pdf"] [tr_lang internship_report1]],
+        p [] [a [href "https://greygalileo.github.io/greygalileo/ljk_report.pdf"] [tr_lang internship_report1]],
         p [] [a [href "https://greygalileo.github.io/elm-interpolation/"] [tr_lang lagrange]]
       ]
     ]
