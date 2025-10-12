@@ -1,8 +1,8 @@
 ## Hi there 👋
 
-I'm Galileo Grey, a 3rd year undergraduate student studying pure mathematics at Université Grenoble Alpes.
+I'm Galileo Grey, a first year master's student studying pure mathematics at Universiteit Leiden.
 I upload personal projects (like my personal website/portfolio) on github, as well as various projects from courses I've taken or from internships I've done.
-I have research experience with finite fields as well as elementary numerical analysis through internships I've done at laboratories in my university.
+I have research experience with Scubert calculus, finite fields, as well as elementary numerical analysis through internships I've done at laboratories during my undergraduate studies.
 I'm interested in pursuing research related to algebra and topology.
 
 <!--
